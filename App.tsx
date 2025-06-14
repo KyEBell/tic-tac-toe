@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, Text, StyleSheet } from 'react-native';
 import TicTacToeBoard from './components/TicTacToeBoard';
 import { CellValue } from './types/types';
 import { getBestMove, checkWinner } from './utils/gameLogic';
@@ -53,22 +53,8 @@ export default function App() {
   };
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#121212',
-      }}>
-      <Text
-        style={{
-          fontSize: 32,
-          fontWeight: 'bold',
-          marginBottom: 20,
-          color: '#00ffe7',
-        }}>
-        Tic-Tac-Toe
-      </Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Tic-Tac-Toe</Text>
 
       <TicTacToeBoard board={board} onCellPress={handleCellPress} />
       <GameOverModal
@@ -80,3 +66,18 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#121212',
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#00ffe7',
+  },
+});
