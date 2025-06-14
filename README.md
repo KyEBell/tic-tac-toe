@@ -28,7 +28,7 @@ npm install
 npm start
 ```
 
-Scan the QR code using the Expo Go app or device camera to open the application (available on iOS)
+Scan the QR code that displays in your terminal using the Expo Go app or device camera to open the application (available on iOS)
 
 ## Running tests
 
